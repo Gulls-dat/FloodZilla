@@ -21,7 +21,9 @@ for dic in data:
         csv_w.writerow(header)
         for row in datapoints:
             row = list(row.values())[0:3]
-            unix_timestamp = int(str(row[1])[0:10])
+            seconds = row[1] // 1000
+            row[1] = seconds
+            unix_timestamp = row[1]
             # asctime = asctime(localtime(unix_timestamp))
             datetime_obj = datetime.fromtimestamp(unix_timestamp)
             row.append(datetime_obj)

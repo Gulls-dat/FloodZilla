@@ -2,3 +2,6 @@
 *.json
 *.csv
 *.swp
+*.RData
+*.Rhistory
+
